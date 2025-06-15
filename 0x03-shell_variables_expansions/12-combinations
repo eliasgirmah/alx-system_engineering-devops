@@ -1,0 +1,2 @@
+#!/bin/bash
+for i in {0..98}; do for j in $(seq $((i+1)) 99); do printf "%02d %02d%s" $i $j $([[ $i -eq 98 && $j -eq 99 ]] && echo "" || echo ", "); done; done
