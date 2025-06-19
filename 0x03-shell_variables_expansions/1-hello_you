@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "hello ($whoami)"
+# This script prints a greeting to the current user
+
+user=$(whoami)
+echo "hello $user"
