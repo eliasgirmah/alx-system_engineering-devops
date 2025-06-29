@@ -1,0 +1,6 @@
+Host myserver
+    HostName 6a9156ef0364.b38effb4.alx-cod.online
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    IdentitiesOnly yes
+    PasswordAuthentication no
