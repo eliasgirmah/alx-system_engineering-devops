@@ -1,17 +1,7 @@
 #!/usr/bin/env bash
-# Install Nginx Web Server and configure a custom index page
+# This script installs Nginx and sets up a custom Hello World page
 
-# Exit if any command fails
-set -e
-
-# Update package index
-sudo apt-get update -y
-
-# Install nginx
-sudo apt-get install nginx -y
-
-# Overwrite index page with "Hello World!"
-echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
-
-# Restart nginx using service (not systemctl)
-sudo service nginx restart
+apt-get update -y
+apt-get install nginx -y
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+service nginx restart
