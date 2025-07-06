@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # Install Nginx Web Server and configure a custom index page
 
-# Exit on error
+# Exit if any command fails
 set -e
 
 # Update package index
-apt-get update -y
+sudo apt-get update -y
 
 # Install nginx
-apt-get install nginx -y
+sudo apt-get install nginx -y
 
-# Create custom HTML page
-echo "Hello World!" > /var/www/html/index.html
+# Overwrite index page with "Hello World!"
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 
-# Restart nginx (using service, not systemctl)
-service nginx restart
+# Restart nginx using service (not systemctl)
+sudo service nginx restart
