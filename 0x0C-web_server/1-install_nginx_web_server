@@ -1,15 +1,17 @@
-#!/bin/bash
-# Update package lists
-apt-get update
+#!/usr/bin/env bash
+# Install Nginx Web Server and configure a custom index page
 
-# Install Nginx without user interaction
-apt-get install -y nginx
+# Exit on error
+set -e
 
-# Ensure the web root directory exists
-mkdir -p /var/www/html/
+# Update package index
+apt-get update -y
 
-# Create the index.html file with "Hello World!"
+# Install nginx
+apt-get install nginx -y
+
+# Create custom HTML page
 echo "Hello World!" > /var/www/html/index.html
 
-# Start Nginx to ensure it runs (uses service command instead of systemctl)
-service nginx start
+# Restart nginx (using service, not systemctl)
+service nginx restart
