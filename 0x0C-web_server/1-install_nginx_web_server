@@ -1,13 +1,15 @@
-#!/usr/bin/env bash
-
-#apt-get update -y
-#apt-get install -y nginx
-#echo "Hello World!" > /var/www/html/index.html
-#service nginx start
-!/bin/bash
-set -e
+#!/bin/bash
+# Update package lists
 apt-get update
+
+# Install Nginx without user interaction
 apt-get install -y nginx
+
+# Ensure the web root directory exists
 mkdir -p /var/www/html/
+
+# Create the index.html file with "Hello World!"
 echo "Hello World!" > /var/www/html/index.html
+
+# Start Nginx to ensure it runs (uses service command instead of systemctl)
 service nginx start
